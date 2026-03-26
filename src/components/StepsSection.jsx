@@ -5,7 +5,7 @@ export default function StepsSection() {
   return (
     <section className="relative w-full overflow-hidden bg-black">
       {/* Image container with constrained height */}
-      <div className="relative w-full h-[80vh] overflow-hidden">
+      <div className="relative w-full h-[800px] overflow-hidden">
         {/* Background Image */}
         <img
           alt="Modern architectural house at night with pool and lounge chairs"
