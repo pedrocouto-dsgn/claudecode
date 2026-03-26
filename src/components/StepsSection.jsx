@@ -3,9 +3,9 @@ const BG_IMAGE =
 
 export default function StepsSection() {
   return (
-    <section className="relative w-full py-20 px-8 md:px-12 overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-black">
       {/* Image container with constrained height */}
-      <div className="relative w-full max-w-[1920px] mx-auto h-[80vh] rounded-2xl overflow-hidden">
+      <div className="relative w-full h-[80vh] overflow-hidden">
         {/* Background Image */}
         <img
           alt="Modern architectural house at night with pool and lounge chairs"
