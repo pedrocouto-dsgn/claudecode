@@ -80,7 +80,7 @@ export default function WhyWorkWithUs() {
           </div>
 
           {/* Right Side: Stacking cards */}
-          <div className="lg:col-span-8 relative h-[420px] md:h-[480px]">
+          <div className="lg:col-span-8 relative h-[320px] md:h-[360px]">
             {items.map((item, i) => {
               const isVisible = i <= activeIndex;
               const distanceFromTop = activeIndex - i;
@@ -90,7 +90,7 @@ export default function WhyWorkWithUs() {
               return (
                 <div
                   key={item.num}
-                  className={`absolute inset-0 bg-[#1a1a1a] border border-neutral-800/50 rounded-2xl p-8 md:p-12 flex flex-col justify-between transition-all duration-700 ease-out ${
+                  className={`absolute inset-0 bg-black border-t ${i === items.length - 1 ? 'border-b' : ''} border-neutral-800/50 py-12 flex items-start gap-12 transition-all duration-700 ease-out ${
                     isVisible
                       ? 'opacity-100'
                       : 'opacity-0 translate-y-16 pointer-events-none'
@@ -102,21 +102,18 @@ export default function WhyWorkWithUs() {
                       : 'translateY(64px) scale(0.95)',
                   }}
                 >
-                  {/* Top */}
-                  <div className="flex items-start justify-between">
-                    <div className="font-headline text-6xl md:text-7xl font-light text-neutral-700">
-                      {item.num}
-                    </div>
-                    <span className="px-4 py-1 border border-neutral-700 text-[10px] uppercase tracking-widest text-neutral-500">
-                      {item.tag}
-                    </span>
+                  <div className="font-headline text-5xl md:text-6xl font-light text-neutral-700">
+                    {item.num}
                   </div>
-
-                  {/* Bottom */}
-                  <div>
-                    <h3 className="font-headline text-3xl md:text-5xl font-bold text-white uppercase tracking-tight mb-4 md:mb-6">
-                      {item.title}
-                    </h3>
+                  <div className="flex-grow">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">
+                        {item.title}
+                      </h3>
+                      <span className="px-4 py-1 border border-neutral-800 text-[10px] uppercase tracking-widest text-neutral-500">
+                        {item.tag}
+                      </span>
+                    </div>
                     <p className="font-body text-neutral-400 leading-relaxed text-sm md:text-base max-w-xl">
                       {item.text}
                     </p>
