@@ -2,7 +2,7 @@ const navLinks = ['Gallery', 'Expertise', 'Studio', 'Journal'];
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#131313]/40 backdrop-blur-2xl flex justify-between items-center px-12 py-8">
+    <nav className="w-full z-50 bg-[#131313] flex justify-between items-center px-12 py-8">
       <div className="text-2xl font-black tracking-tighter text-white font-headline uppercase">
         COSMOS STUDIO
       </div>
