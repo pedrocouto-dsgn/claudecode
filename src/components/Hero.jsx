@@ -10,7 +10,7 @@ export default function Hero() {
           className="w-full h-full object-cover opacity-60"
           src={HERO_IMAGE}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+{/* no gradient overlay */}
       </div>
 
       <div className="relative z-10 w-full editorial-grid gap-4">
