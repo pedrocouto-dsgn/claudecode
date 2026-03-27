@@ -5,7 +5,6 @@ import PhilosophyShowcase from './components/PhilosophyShowcase';
 import ProjectSpotlight from './components/ProjectSpotlight';
 import WhyWorkWithUs from './components/WhyWorkWithUs';
 import StepsSection from './components/StepsSection';
-import JournalSpotlight from './components/JournalSpotlight';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -20,7 +19,6 @@ export default function App() {
         <ProjectSpotlight />
         <WhyWorkWithUs />
         <StepsSection />
-        <JournalSpotlight />
         <ContactSection />
       </main>
       <Footer />
