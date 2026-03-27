@@ -3,7 +3,7 @@ const BG_IMAGE =
 
 export default function StepsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-white">
       {/* Image container with constrained height */}
       <div className="relative w-full h-[800px] overflow-hidden">
         {/* Background Image */}

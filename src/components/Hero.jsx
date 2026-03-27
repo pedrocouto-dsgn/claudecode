@@ -3,19 +3,19 @@ const HERO_IMAGE =
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative flex items-end pt-32 pb-24 px-12 overflow-hidden bg-surface">
+    <section className="min-h-screen relative flex items-end pt-32 pb-24 px-12 overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <img
           alt="monolithic brutalist concrete architecture at dusk with minimalist geometry and soft atmospheric lighting casting dramatic long shadows"
           className="w-full h-full object-cover opacity-60"
           src={HERO_IMAGE}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 w-full editorial-grid gap-4">
         <div className="col-span-12 md:col-span-8">
-          <h1 className="font-headline text-[clamp(3rem,8vw,6.5rem)] leading-[0.9] font-black tracking-tighter uppercase text-white mb-12">
+          <h1 className="font-headline text-[clamp(3rem,8vw,6.5rem)] leading-[0.9] font-black tracking-tighter uppercase text-black mb-12">
             High-end studio
             <br />
             with a clear focus
@@ -23,25 +23,25 @@ export default function Hero() {
         </div>
 
         <div className="col-span-12 md:col-span-4 flex flex-col justify-end gap-12 md:pb-4">
-          <div className="flex gap-12 border-t border-white/10 pt-8">
+          <div className="flex gap-12 border-t border-black/10 pt-8">
             <div>
-              <p className="font-label text-xs uppercase tracking-widest text-secondary mb-2">Projects</p>
-              <p className="font-headline text-4xl font-bold italic">140+</p>
+              <p className="font-label text-xs uppercase tracking-widest text-neutral-500 mb-2">Projects</p>
+              <p className="font-headline text-4xl font-bold italic text-black">140+</p>
             </div>
             <div>
-              <p className="font-label text-xs uppercase tracking-widest text-secondary mb-2">Awards</p>
-              <p className="font-headline text-4xl font-bold italic">24</p>
+              <p className="font-label text-xs uppercase tracking-widest text-neutral-500 mb-2">Awards</p>
+              <p className="font-headline text-4xl font-bold italic text-black">24</p>
             </div>
           </div>
 
           <div className="group cursor-pointer">
-            <p className="font-label text-xs uppercase tracking-[0.3em] text-secondary mb-4 flex items-center gap-2">
-              Latest Project <span className="w-12 h-[1px] bg-secondary/30" />
+            <p className="font-label text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 flex items-center gap-2">
+              Latest Project <span className="w-12 h-[1px] bg-neutral-300" />
             </p>
-            <h3 className="font-headline text-2xl font-bold uppercase mb-2 group-hover:pl-4 transition-all duration-700">
+            <h3 className="font-headline text-2xl font-bold uppercase mb-2 group-hover:pl-4 transition-all duration-700 text-black">
               Ridge House
             </h3>
-            <p className="text-secondary/60 max-w-xs text-sm leading-relaxed">
+            <p className="text-neutral-500 max-w-xs text-sm leading-relaxed">
               A coastal retreat harmonized with the rugged terrain of northern peaks.
             </p>
           </div>

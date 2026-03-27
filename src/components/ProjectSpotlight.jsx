@@ -58,7 +58,7 @@ export default function ProjectSpotlight() {
 
   return (
     <section
-      className="bg-black min-h-screen flex flex-col justify-between py-16 px-8 md:px-12 overflow-hidden"
+      className="bg-white min-h-screen flex flex-col justify-between py-16 px-8 md:px-12 overflow-hidden border-t border-neutral-200"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -67,14 +67,14 @@ export default function ProjectSpotlight() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-16">
           {/* Left small description */}
           <div className="lg:col-span-3">
-            <p className="font-body text-neutral-400 text-sm max-w-xs leading-relaxed">
+            <p className="font-body text-neutral-500 text-sm max-w-xs leading-relaxed">
               A focused overview highlighting key architectural ideas and
               refined execution.
             </p>
           </div>
           {/* Right large title */}
           <div className="lg:col-span-9 text-right">
-            <h2 className="font-headline text-[clamp(3rem,7vw,7rem)] leading-[0.95] font-light tracking-tight text-white">
+            <h2 className="font-headline text-[clamp(3rem,7vw,7rem)] leading-[0.95] font-light tracking-tight text-black">
               Premium <span className="italic font-normal text-neutral-400">homes</span>
               <br />
               made by <span className="font-bold">Cosmos Studio</span>
@@ -88,23 +88,23 @@ export default function ProjectSpotlight() {
           <div className="lg:col-span-5 relative flex flex-col justify-between h-full min-h-[400px]">
             {/* Large number */}
             <div className="mb-8">
-              <span className="font-serif-display text-[10rem] md:text-[12rem] leading-none text-white font-light tracking-tighter block transition-all duration-700">
+              <span className="font-serif-display text-[10rem] md:text-[12rem] leading-none text-black font-light tracking-tighter block transition-all duration-700">
                 {card.num}
               </span>
             </div>
 
             {/* Title */}
             <div className="mb-12">
-              <h3 className="font-serif-display text-6xl md:text-7xl lg:text-8xl text-white font-medium tracking-tight transition-all duration-700">
+              <h3 className="font-serif-display text-6xl md:text-7xl lg:text-8xl text-black font-medium tracking-tight transition-all duration-700">
                 {card.title}
               </h3>
             </div>
 
             {/* Info row */}
-            <div className="border-t border-neutral-800 pt-8 grid grid-cols-2 gap-8 mb-12">
+            <div className="border-t border-neutral-200 pt-8 grid grid-cols-2 gap-8 mb-12">
               <div className="space-y-4">
-                <p className="text-white font-medium">2024</p>
-                <div className="flex items-center gap-2 text-neutral-400 text-sm">
+                <p className="text-black font-medium">2024</p>
+                <div className="flex items-center gap-2 text-neutral-500 text-sm">
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>
@@ -112,7 +112,7 @@ export default function ProjectSpotlight() {
                 </div>
               </div>
               <div>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-500 text-sm leading-relaxed">
                   {card.description}
                 </p>
               </div>
@@ -120,17 +120,17 @@ export default function ProjectSpotlight() {
 
             {/* Scope tags */}
             <div className="mb-12">
-              <p className="text-neutral-500 text-xs uppercase tracking-widest mb-6">
+              <p className="text-neutral-400 text-xs uppercase tracking-widest mb-6">
                 Scope
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-6 py-2 border border-neutral-700 rounded-full text-[10px] uppercase tracking-widest text-neutral-300">
+                <span className="px-6 py-2 border border-neutral-300 rounded-full text-[10px] uppercase tracking-widest text-neutral-600">
                   Architecture
                 </span>
-                <span className="px-6 py-2 border border-neutral-700 rounded-full text-[10px] uppercase tracking-widest text-neutral-300">
+                <span className="px-6 py-2 border border-neutral-300 rounded-full text-[10px] uppercase tracking-widest text-neutral-600">
                   Engineering
                 </span>
-                <span className="px-6 py-2 border border-neutral-700 rounded-full text-[10px] uppercase tracking-widest text-neutral-300">
+                <span className="px-6 py-2 border border-neutral-300 rounded-full text-[10px] uppercase tracking-widest text-neutral-600">
                   Construction
                 </span>
               </div>
@@ -138,11 +138,11 @@ export default function ProjectSpotlight() {
 
             {/* Button + coordinates */}
             <div className="flex items-center justify-between">
-              <button className="bg-white text-black px-8 py-4 font-bold uppercase tracking-tighter text-sm hover:bg-neutral-200 transition-colors">
+              <button className="bg-black text-white px-8 py-4 font-bold uppercase tracking-tighter text-sm hover:bg-neutral-800 transition-colors">
                 Discuss the Project
               </button>
               <div className="text-right">
-                <p className="text-neutral-500 font-mono text-[10px] leading-tight">
+                <p className="text-neutral-400 font-mono text-[10px] leading-tight">
                   38.7223° N
                   <br />
                   9.1393° W
@@ -174,7 +174,7 @@ export default function ProjectSpotlight() {
             {/* Navigation Controls */}
             <div className="flex items-center justify-between">
               <div className="flex-grow flex items-center gap-1 max-w-md">
-                <span className="text-neutral-300 text-sm font-medium pr-4">
+                <span className="text-neutral-600 text-sm font-medium pr-4">
                   {card.num}/{String(cards.length).padStart(2, '0')}
                 </span>
                 {/* Segmented progress bar */}
@@ -182,15 +182,15 @@ export default function ProjectSpotlight() {
                   {cards.map((_, i) => (
                     <div
                       key={i}
-                      className="flex-1 h-[2px] bg-neutral-800 relative overflow-hidden cursor-pointer"
+                      className="flex-1 h-[2px] bg-neutral-200 relative overflow-hidden cursor-pointer"
                       onClick={() => setActiveIndex(i)}
                     >
                       <div
-                        className={`absolute inset-0 bg-white transition-all duration-500 origin-left ${
+                        className={`absolute inset-0 bg-black transition-all duration-500 origin-left ${
                           i === activeIndex
                             ? 'scale-x-100'
                             : i < activeIndex
-                              ? 'scale-x-100 bg-neutral-600'
+                              ? 'scale-x-100 bg-neutral-400'
                               : 'scale-x-0'
                         }`}
                       />
@@ -201,7 +201,7 @@ export default function ProjectSpotlight() {
               <div className="flex gap-4 ml-8">
                 <button
                   onClick={goPrev}
-                  className="w-12 h-12 border border-neutral-800 flex items-center justify-center text-white hover:bg-neutral-900 transition-colors cursor-pointer"
+                  className="w-12 h-12 border border-neutral-200 flex items-center justify-center text-black hover:bg-neutral-100 transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined">
                     arrow_back
@@ -209,7 +209,7 @@ export default function ProjectSpotlight() {
                 </button>
                 <button
                   onClick={goNext}
-                  className="w-12 h-12 bg-white flex items-center justify-center text-black hover:bg-neutral-200 transition-colors cursor-pointer"
+                  className="w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-neutral-800 transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined">
                     arrow_forward

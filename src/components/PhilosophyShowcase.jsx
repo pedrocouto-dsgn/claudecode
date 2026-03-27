@@ -71,7 +71,7 @@ export default function PhilosophyShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black"
+      className="relative bg-white"
       style={{ height: `${cards.length * 100}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden">
@@ -90,22 +90,22 @@ export default function PhilosophyShowcase() {
                       : 'opacity-0 scale-105 pointer-events-none'
                 } ${
                   i % 2 === 0
-                    ? 'bg-[#0e0e0e] border border-neutral-800/30'
-                    : 'bg-white'
+                    ? 'bg-neutral-50 border border-neutral-200'
+                    : 'bg-black'
                 }`}
               >
                 {/* Top row */}
                 <div className="flex justify-between items-start">
                   <span
                     className={`font-headline text-lg md:text-xl font-bold tracking-widest uppercase ${
-                      i % 2 === 0 ? 'text-neutral-500' : 'text-neutral-400'
+                      i % 2 === 0 ? 'text-neutral-400' : 'text-neutral-500'
                     }`}
                   >
                     {card.num}
                   </span>
                   <span
                     className={`material-symbols-outlined text-3xl ${
-                      i % 2 === 0 ? 'text-neutral-500' : 'text-black'
+                      i % 2 === 0 ? 'text-neutral-400' : 'text-neutral-500'
                     }`}
                   >
                     north_east
@@ -116,14 +116,14 @@ export default function PhilosophyShowcase() {
                 <div>
                   <h4
                     className={`font-headline text-4xl md:text-6xl lg:text-7xl font-bold uppercase mb-6 md:mb-8 tracking-tight ${
-                      i % 2 === 0 ? 'text-white' : 'text-black'
+                      i % 2 === 0 ? 'text-black' : 'text-white'
                     }`}
                   >
                     {card.title}
                   </h4>
                   <p
                     className={`font-body leading-relaxed text-base md:text-lg max-w-2xl ${
-                      i % 2 === 0 ? 'text-neutral-400' : 'text-neutral-700'
+                      i % 2 === 0 ? 'text-neutral-500' : 'text-neutral-400'
                     }`}
                   >
                     {card.text}
@@ -137,17 +137,17 @@ export default function PhilosophyShowcase() {
           <div className="absolute bottom-6 md:bottom-10 right-6 md:right-10 flex items-center gap-4 z-10">
             <span
               className={`text-sm font-medium font-headline ${
-                activeIndex % 2 === 0 ? 'text-neutral-300' : 'text-neutral-600'
+                activeIndex % 2 === 0 ? 'text-neutral-600' : 'text-neutral-300'
               }`}
             >
               {cards[activeIndex].num}/{String(cards.length).padStart(2, '0')}
             </span>
-            <div className="w-32 md:w-48 h-[1px] bg-neutral-800 relative">
+            <div className="w-32 md:w-48 h-[1px] bg-neutral-300 relative">
               <div
                 className="absolute left-0 top-0 h-[2px] -mt-[0.5px] transition-all duration-700 ease-out"
                 style={{
                   width: `${((activeIndex + 1) / cards.length) * 100}%`,
-                  backgroundColor: activeIndex % 2 === 0 ? '#fff' : '#000',
+                  backgroundColor: activeIndex % 2 === 0 ? '#000' : '#fff',
                 }}
               />
             </div>
@@ -160,8 +160,8 @@ export default function PhilosophyShowcase() {
                 key={i}
                 className={`rounded-full transition-all duration-500 ${
                   i === activeIndex
-                    ? `w-2 h-2 ${activeIndex % 2 === 0 ? 'bg-white' : 'bg-black'}`
-                    : `w-1.5 h-1.5 ${activeIndex % 2 === 0 ? 'bg-neutral-700' : 'bg-neutral-300'}`
+                    ? `w-2 h-2 ${activeIndex % 2 === 0 ? 'bg-black' : 'bg-white'}`
+                    : `w-1.5 h-1.5 ${activeIndex % 2 === 0 ? 'bg-neutral-300' : 'bg-neutral-600'}`
                 }`}
               />
             ))}
