@@ -3,7 +3,7 @@ const HERO_IMAGE =
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative flex items-end pt-32 pb-24 px-12 overflow-hidden">
+    <section className="min-h-screen relative flex items-end pt-32 pb-10 px-12 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           alt="monolithic brutalist concrete architecture at dusk with minimalist geometry and soft atmospheric lighting casting dramatic long shadows"
@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full editorial-grid gap-4">
         <div className="col-span-12 md:col-span-8">
-          <h1 className="font-headline text-[80px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-12">
+          <h1 className="font-headline text-[80px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-0">
             High-end studio
             <br />
             with a clear focus
