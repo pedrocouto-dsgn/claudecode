@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           alt="Professional recording studio with mixing console and audio equipment"
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover opacity-55"
           src={HERO_IMAGE}
         />
 {/* no gradient overlay */}
