@@ -1,4 +1,4 @@
-const HERO_IMAGE = '/hero-studio.jpg';
+const HERO_IMAGE = '/5-maneras-estudio-visual-sonido-1200x500-1.jpeg';
 
 export default function Hero() {
   return (
