@@ -120,16 +120,6 @@ export default function ProjectSpotlight() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              <button className="bg-white text-black px-8 py-4 font-bold uppercase tracking-tighter text-sm hover:bg-neutral-200 transition-colors">
-                Discuss the Project
-              </button>
-              <div className="text-right">
-                <p className="text-neutral-500 font-mono text-[10px] leading-tight">
-                  38.7223° N<br />9.1393° W
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Right Image + Controls */}
