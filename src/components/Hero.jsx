@@ -22,29 +22,10 @@ export default function Hero() {
           </h1>
         </div>
 
-        <div className="col-span-12 md:col-span-4 flex flex-col justify-end gap-12 md:pb-4">
-          <div className="flex gap-12 border-t border-white/20 pt-8">
-            <div>
-              <p className="font-label text-xs uppercase tracking-widest text-neutral-300 mb-2">Projects</p>
-              <p className="font-headline text-[50px] font-bold italic text-white">140+</p>
-            </div>
-            <div>
-              <p className="font-label text-xs uppercase tracking-widest text-neutral-300 mb-2">Awards</p>
-              <p className="font-headline text-[50px] font-bold italic text-white">24</p>
-            </div>
-          </div>
-
-          <div className="group cursor-pointer">
-            <p className="font-label text-xs uppercase tracking-[0.3em] text-neutral-300 mb-4 flex items-center gap-2">
-              Latest Project <span className="w-12 h-[1px] bg-neutral-300" />
-            </p>
-            <h3 className="font-headline text-2xl font-bold uppercase mb-2 group-hover:pl-4 transition-all duration-700 text-white">
-              Ridge House
-            </h3>
-            <p className="text-neutral-300 max-w-xs text-[18px] leading-relaxed">
-              A coastal retreat harmonized with the rugged terrain of northern peaks.
-            </p>
-          </div>
+        <div className="col-span-12 md:col-span-8">
+          <p className="text-neutral-300 max-w-xl text-[18px] leading-relaxed mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
       </div>
     </section>
