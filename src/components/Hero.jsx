@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full editorial-grid gap-4">
         <div className="col-span-12 md:col-span-8">
-          <h1 className="font-headline text-[clamp(3rem,8vw,6.5rem)] leading-[0.9] font-black tracking-tighter uppercase text-white mb-12">
+          <h1 className="font-headline text-[50px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-12">
             High-end studio
             <br />
             with a clear focus
@@ -26,11 +26,11 @@ export default function Hero() {
           <div className="flex gap-12 border-t border-white/20 pt-8">
             <div>
               <p className="font-label text-xs uppercase tracking-widest text-neutral-300 mb-2">Projects</p>
-              <p className="font-headline text-4xl font-bold italic text-white">140+</p>
+              <p className="font-headline text-[50px] font-bold italic text-white">140+</p>
             </div>
             <div>
               <p className="font-label text-xs uppercase tracking-widest text-neutral-300 mb-2">Awards</p>
-              <p className="font-headline text-4xl font-bold italic text-white">24</p>
+              <p className="font-headline text-[50px] font-bold italic text-white">24</p>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export default function Hero() {
             <h3 className="font-headline text-2xl font-bold uppercase mb-2 group-hover:pl-4 transition-all duration-700 text-white">
               Ridge House
             </h3>
-            <p className="text-neutral-300 max-w-xs text-sm leading-relaxed">
+            <p className="text-neutral-300 max-w-xs text-[18px] leading-relaxed">
               A coastal retreat harmonized with the rugged terrain of northern peaks.
             </p>
           </div>

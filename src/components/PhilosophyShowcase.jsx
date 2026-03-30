@@ -115,14 +115,14 @@ export default function PhilosophyShowcase() {
                 {/* Bottom content */}
                 <div>
                   <h4
-                    className={`font-headline text-4xl md:text-6xl lg:text-7xl font-bold uppercase mb-6 md:mb-8 tracking-tight ${
+                    className={`font-headline text-[50px] font-bold uppercase mb-6 md:mb-8 tracking-tight ${
                       i % 2 === 0 ? 'text-black' : 'text-white'
                     }`}
                   >
                     {card.title}
                   </h4>
                   <p
-                    className={`font-body leading-relaxed text-base md:text-lg max-w-2xl ${
+                    className={`font-body leading-relaxed text-[18px] max-w-2xl ${
                       i % 2 === 0 ? 'text-neutral-500' : 'text-neutral-400'
                     }`}
                   >

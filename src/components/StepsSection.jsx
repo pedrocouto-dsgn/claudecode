@@ -17,7 +17,7 @@ export default function StepsSection() {
         {/* Top Content */}
         <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 md:p-12">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-            <h2 className="font-headline text-[clamp(3rem,7vw,7rem)] text-white font-light tracking-tight leading-[0.9] max-w-3xl">
+            <h2 className="font-headline text-[50px] text-white font-light tracking-tight leading-[0.9] max-w-3xl">
               Steps to your
               <br />
               new home

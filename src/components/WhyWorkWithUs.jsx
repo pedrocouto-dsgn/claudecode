@@ -72,10 +72,10 @@ export default function WhyWorkWithUs() {
         <div className="max-w-[1920px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left Side: Title (sticky) */}
           <div className="lg:col-span-5">
-            <h2 className="font-headline text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-black tracking-tight text-black uppercase">
+            <h2 className="font-headline text-[50px] leading-[1.05] font-black tracking-tight text-black uppercase">
               Why work with us
             </h2>
-            <p className="font-body text-neutral-500 leading-relaxed text-sm md:text-base max-w-md mt-8">
+            <p className="font-body text-neutral-500 leading-relaxed text-[18px] max-w-md mt-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
           </div>
@@ -103,19 +103,19 @@ export default function WhyWorkWithUs() {
                       : 'translateY(64px) scale(0.95)',
                   }}
                 >
-                  <div className="font-headline text-4xl md:text-5xl font-light text-neutral-300">
+                  <div className="font-headline text-[50px] font-light text-neutral-300">
                     {item.num}
                   </div>
                   <div className="flex-grow">
                     <div className="flex justify-between items-center mb-3">
-                      <h3 className="font-headline text-2xl md:text-3xl font-bold text-black uppercase tracking-tight">
+                      <h3 className="font-headline text-[30px] font-bold text-black uppercase tracking-tight">
                         {item.title}
                       </h3>
                       <span className="px-4 py-1 border border-neutral-200 text-[10px] uppercase tracking-widest text-neutral-400">
                         {item.tag}
                       </span>
                     </div>
-                    <p className="font-body text-neutral-500 leading-relaxed text-sm md:text-base max-w-xl">
+                    <p className="font-body text-neutral-500 leading-relaxed text-[18px] max-w-xl">
                       {item.text}
                     </p>
                   </div>

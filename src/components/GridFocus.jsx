@@ -24,7 +24,7 @@ export default function GridFocus() {
     <section className="py-32 px-12 bg-white min-h-screen flex flex-col justify-center border-t border-neutral-200">
       <div className="max-w-screen-2xl mx-auto w-full">
         <div className="mb-24">
-          <h2 className="font-headline text-[clamp(2.5rem,6vw,5rem)] leading-tight font-light tracking-tight text-black/90">
+          <h2 className="font-headline text-[50px] leading-tight font-light tracking-tight text-black/90">
             A modern studio with a <span className="italic font-normal">clear focus</span>
           </h2>
         </div>
@@ -48,7 +48,7 @@ export default function GridFocus() {
                   <h4 className="font-headline text-2xl font-bold uppercase text-white mb-6">
                     {card.title}
                   </h4>
-                  <p className="font-body text-neutral-300 leading-relaxed text-sm max-w-xs">
+                  <p className="font-body text-neutral-300 leading-relaxed text-[18px] max-w-xs">
                     {card.text}
                   </p>
                 </div>
@@ -70,7 +70,7 @@ export default function GridFocus() {
                   <h4 className="font-headline text-2xl font-bold uppercase text-black mb-6">
                     {card.title}
                   </h4>
-                  <p className="font-body text-neutral-500 leading-relaxed text-sm max-w-xs">
+                  <p className="font-body text-neutral-500 leading-relaxed text-[18px] max-w-xs">
                     {card.text}
                   </p>
                 </div>

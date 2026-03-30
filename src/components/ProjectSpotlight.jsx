@@ -72,7 +72,7 @@ export default function ProjectSpotlight() {
             </p>
           </div>
           <div className="lg:col-span-9 text-right">
-            <h2 className="font-headline text-[clamp(3rem,7vw,7rem)] leading-[0.95] font-light tracking-tight text-white">
+            <h2 className="font-headline text-[50px] leading-[0.95] font-light tracking-tight text-white">
               Premium <span className="italic font-normal text-neutral-400">homes</span>
               <br />
               made by <span className="font-bold">Cosmos Studio</span>
@@ -85,13 +85,13 @@ export default function ProjectSpotlight() {
           {/* Left Content */}
           <div className="lg:col-span-5 relative flex flex-col justify-between h-full min-h-[400px]">
             <div className="mb-8">
-              <span className="font-serif-display text-[10rem] md:text-[12rem] leading-none text-white font-light tracking-tighter block transition-all duration-700">
+              <span className="font-serif-display text-[80px] leading-none text-white font-light tracking-tighter block transition-all duration-700">
                 {card.num}
               </span>
             </div>
 
             <div className="mb-12">
-              <h3 className="font-serif-display text-6xl md:text-7xl lg:text-8xl text-white font-medium tracking-tight transition-all duration-700">
+              <h3 className="font-serif-display text-[50px] text-white font-medium tracking-tight transition-all duration-700">
                 {card.title}
               </h3>
             </div>
@@ -105,7 +105,7 @@ export default function ProjectSpotlight() {
                 </div>
               </div>
               <div>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-400 text-[18px] leading-relaxed">
                   {card.description}
                 </p>
               </div>
