@@ -2,7 +2,7 @@ const HERO_IMAGE = '/5-maneras-estudio-visual-sonido-1200x500-1.jpeg';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative flex items-end pt-32 pb-10 px-12 overflow-hidden">
+    <section className="min-h-screen relative flex items-end pt-32 pb-10 px-12 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <img
           alt="Professional recording studio with mixing console and audio equipment"
