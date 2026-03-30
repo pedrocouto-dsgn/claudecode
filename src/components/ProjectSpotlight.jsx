@@ -84,7 +84,7 @@ export default function ProjectSpotlight() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start flex-grow">
           {/* Left Content */}
           <div className="lg:col-span-5 relative flex flex-col justify-between h-full min-h-[400px]">
-            <div className="mb-8">
+            <div className="mb-2">
               <span className="font-['Inter'] text-[80px] leading-none text-white font-light tracking-tighter block transition-all duration-700">
                 {card.num}
               </span>
