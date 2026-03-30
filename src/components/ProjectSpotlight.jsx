@@ -94,21 +94,9 @@ export default function ProjectSpotlight() {
               <h3 className="font-['Inter'] text-[50px] text-white font-medium tracking-tight transition-all duration-700">
                 {card.title}
               </h3>
-            </div>
-
-            <div className="border-t border-neutral-800 pt-8 grid grid-cols-2 gap-8 mb-12">
-              <div className="space-y-4">
-                <p className="text-white font-medium">2024</p>
-                <div className="flex items-center gap-2 text-neutral-400 text-sm">
-                  <span className="material-symbols-outlined text-sm">location_on</span>
-                  Lisboa, Portugal
-                </div>
-              </div>
-              <div>
-                <p className="text-neutral-400 text-[18px] leading-relaxed">
-                  {card.description}
-                </p>
-              </div>
+              <p className="text-neutral-400 text-[18px] leading-relaxed mt-6 max-w-md">
+                {card.description}
+              </p>
             </div>
 
             <div className="mb-12">
