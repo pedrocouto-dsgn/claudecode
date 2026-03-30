@@ -85,13 +85,13 @@ export default function ProjectSpotlight() {
           {/* Left Content */}
           <div className="lg:col-span-5 relative flex flex-col justify-between h-full min-h-[400px]">
             <div className="mb-8">
-              <span className="font-serif-display text-[80px] leading-none text-white font-light tracking-tighter block transition-all duration-700">
+              <span className="font-body text-[80px] leading-none text-white font-light tracking-tighter block transition-all duration-700">
                 {card.num}
               </span>
             </div>
 
             <div className="mb-12">
-              <h3 className="font-serif-display text-[50px] text-white font-medium tracking-tight transition-all duration-700">
+              <h3 className="font-body text-[50px] text-white font-medium tracking-tight transition-all duration-700">
                 {card.title}
               </h3>
             </div>
