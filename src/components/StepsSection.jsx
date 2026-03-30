@@ -27,9 +27,6 @@ export default function StepsSection() {
                 Our approach follows a clear sequence of stages, supporting
                 consistent and informed decisions.
               </p>
-              <button className="bg-white text-black px-8 py-4 font-headline font-bold uppercase tracking-tighter text-sm hover:bg-neutral-200 transition-colors duration-500">
-                Discuss the Project
-              </button>
             </div>
           </div>
 
