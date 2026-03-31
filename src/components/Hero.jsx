@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full editorial-grid gap-4">
         <div className="col-span-12 md:col-span-8">
-          <h1 className="font-headline text-[80px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-0">
+          <h1 className="font-headline text-[50px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-0">
             Um estúdio onde a tua ideia ganha forma com som, imagem e presença.
           </h1>
         </div>
