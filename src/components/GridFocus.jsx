@@ -21,21 +21,21 @@ const cards = [
 
 export default function GridFocus() {
   return (
-    <section className="py-32 px-12 bg-[#111111] min-h-screen flex flex-col justify-center">
+    <section className="py-32 px-12 bg-white min-h-screen flex flex-col justify-center">
       <div className="max-w-screen-2xl mx-auto w-full">
         {/* Title area with description on the right */}
         <div className="flex justify-between items-start mb-24">
-          <h2 className="font-headline text-[80px] leading-[0.95] font-light tracking-tight text-white/90 max-w-3xl">
+          <h2 className="font-headline text-[50px] leading-[0.95] font-light tracking-tight text-black/90 max-w-3xl">
             Tecnologia certa.<br />
-            <span className="italic font-normal text-white/60">Resultado imediato</span>
+            <span className="italic font-normal text-black/50">Resultado imediato</span>
           </h2>
           <div className="hidden md:flex flex-col items-end gap-6 pt-4">
-            <p className="text-neutral-400 text-[15px] leading-relaxed max-w-[280px] text-right">
+            <p className="text-neutral-500 text-[15px] leading-relaxed max-w-[280px] text-right">
               Axis House is a team working<br />
               at the intersection of real estate,<br />
               architecture, and technology.
             </p>
-            <button className="border border-neutral-500 text-white px-8 py-3 font-headline text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-500">
+            <button className="border border-neutral-300 text-black px-8 py-3 font-headline text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-500">
               Discuss the Project
             </button>
           </div>
