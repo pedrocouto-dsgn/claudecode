@@ -15,15 +15,13 @@ export default function Hero() {
       <div className="relative z-10 w-full editorial-grid gap-4">
         <div className="col-span-12 md:col-span-8">
           <h1 className="font-headline text-[80px] leading-[0.9] font-black tracking-tighter uppercase text-white mb-0">
-            High-end studio
-            <br />
-            with a clear focus
+            Um estúdio onde a tua ideia ganha forma com som, imagem e presença.
           </h1>
         </div>
 
         <div className="col-span-12 md:col-span-8">
           <p className="text-neutral-300 max-w-xl text-[18px] leading-relaxed mt-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Grava, produz e transmite com qualidade profissional num ambiente pensado ao detalhe, do áudio à imagem, do controlo à experiência.
           </p>
         </div>
       </div>
