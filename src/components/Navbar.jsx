@@ -46,19 +46,14 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#top"
-          className="flex flex-col leading-none select-none justify-self-start"
+          className="flex items-center select-none justify-self-start"
         >
-          <span
-            className="font-display text-2xl md:text-[28px] tracking-[0.18em] text-white"
-          >
-            LINEAR
-          </span>
-          <span
-            className="mt-1 text-[10px] md:text-[11px] tracking-[0.32em] text-white/60"
-            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 300 }}
-          >
-            [ CREATIVE&nbsp;STUDIO ]
-          </span>
+          <img
+            src="/Logo%20Linear.svg"
+            alt="Linear Creative Studio"
+            className="h-10 md:h-12 w-auto"
+            draggable={false}
+          />
         </a>
 
         {/* Desktop links — centered column */}
