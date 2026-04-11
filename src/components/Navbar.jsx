@@ -1,27 +1,145 @@
-const navLinks = ['Gallery', 'Expertise', 'Studio', 'Journal'];
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+const NAV_LINKS = [
+  { label: "Sobre", href: "#sobre" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Portfólio", href: "#portfolio" },
+  { label: "Contatos", href: "#contatos" },
+];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-xl flex justify-between items-center px-12 py-8">
-      <div className="text-2xl font-black tracking-tighter text-white font-headline uppercase">
-        COSMOS STUDIO
-      </div>
-      <div className="hidden md:flex gap-12 items-center">
-        {navLinks.map((link) => (
-          <a
-            key={link}
-            className="font-headline tracking-tighter font-bold uppercase text-neutral-400 hover:text-white transition-colors duration-500"
-            href="#"
+    <motion.header
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "backdrop-blur-xl bg-black/60 border-b border-white/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+        {/* Logo */}
+        <a href="#top" className="flex flex-col leading-none select-none">
+          <span
+            className="text-2xl md:text-[28px] tracking-[0.18em] text-white"
+            style={{ fontFamily: "Bebas Neue, sans-serif" }}
           >
-            {link}
-          </a>
-        ))}
-      </div>
-      <div className="flex items-center gap-8">
-        <button className="font-headline tracking-tighter font-bold uppercase text-white hover:opacity-70 transition-opacity duration-500 active:scale-95 duration-700 ease-in-out">
-          Inquiry
+            LINEAR
+          </span>
+          <span
+            className="mt-1 text-[10px] md:text-[11px] tracking-[0.32em] text-white/60"
+            style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+          >
+            [ CREATIVE&nbsp;STUDIO ]
+          </span>
+        </a>
+
+        {/* Desktop links */}
+        <ul
+          className="hidden md:flex items-center gap-10 text-[15px] tracking-[0.08em] text-white/85"
+          style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+        >
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="relative py-2 transition-colors duration-300 hover:text-white"
+              >
+                {link.label}
+                <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-white/70 transition-transform duration-500 group-hover:scale-x-100" />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="md:hidden relative h-10 w-10 flex items-center justify-center"
+        >
+          <span
+            className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
+              menuOpen ? "rotate-45" : "-translate-y-1.5"
+            }`}
+          />
+          <span
+            className={`absolute block h-px w-6 bg-white transition-opacity duration-200 ${
+              menuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
+              menuOpen ? "-rotate-45" : "translate-y-1.5"
+            }`}
+          />
         </button>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed inset-0 top-20 z-40 bg-black/95 backdrop-blur-xl"
+          >
+            <motion.ul
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+              }}
+              className="flex flex-col items-center justify-center gap-10 pt-20"
+              style={{ fontFamily: "Bebas Neue, sans-serif" }}
+            >
+              {NAV_LINKS.map((link) => (
+                <motion.li
+                  key={link.href}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                >
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-4xl tracking-[0.18em] text-white/90 hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
