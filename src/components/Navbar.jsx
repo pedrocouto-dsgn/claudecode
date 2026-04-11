@@ -37,27 +37,38 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+      {/*
+       * 3-column grid: logo · centered menu · mobile button placeholder.
+       * With this layout the <ul> is perfectly centered in the viewport
+       * regardless of the logo width.
+       */}
+      <nav className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 md:px-10">
         {/* Logo */}
-        <a href="#top" className="flex flex-col leading-none select-none">
+        <a
+          href="#top"
+          className="flex flex-col leading-none select-none justify-self-start"
+        >
           <span
-            className="text-2xl md:text-[28px] tracking-[0.18em] text-white"
-            style={{ fontFamily: "Bebas Neue, sans-serif" }}
+            className="font-display text-2xl md:text-[28px] tracking-[0.18em] text-white"
           >
             LINEAR
           </span>
           <span
             className="mt-1 text-[10px] md:text-[11px] tracking-[0.32em] text-white/60"
-            style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 300 }}
           >
             [ CREATIVE&nbsp;STUDIO ]
           </span>
         </a>
 
-        {/* Desktop links */}
+        {/* Desktop links — centered column */}
         <ul
-          className="hidden md:flex items-center gap-10 text-[15px] tracking-[0.08em] text-white/85"
-          style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+          className="hidden md:flex items-center gap-12 text-[17px] text-white/85 justify-self-center"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: 300,
+            letterSpacing: "-0.02em",
+          }}
         >
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -66,36 +77,37 @@ export default function Navbar() {
                 className="relative py-2 transition-colors duration-300 hover:text-white"
               >
                 {link.label}
-                <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-white/70 transition-transform duration-500 group-hover:scale-x-100" />
               </a>
             </li>
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden relative h-10 w-10 flex items-center justify-center"
-        >
-          <span
-            className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
-              menuOpen ? "rotate-45" : "-translate-y-1.5"
-            }`}
-          />
-          <span
-            className={`absolute block h-px w-6 bg-white transition-opacity duration-200 ${
-              menuOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
-              menuOpen ? "-rotate-45" : "translate-y-1.5"
-            }`}
-          />
-        </button>
+        {/* Right slot — empty on desktop, hamburger on mobile */}
+        <div className="justify-self-end">
+          <button
+            type="button"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="md:hidden relative h-10 w-10 flex items-center justify-center"
+          >
+            <span
+              className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
+                menuOpen ? "rotate-45" : "-translate-y-1.5"
+              }`}
+            />
+            <span
+              className={`absolute block h-px w-6 bg-white transition-opacity duration-200 ${
+                menuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute block h-px w-6 bg-white transition-transform duration-300 ${
+                menuOpen ? "-rotate-45" : "translate-y-1.5"
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile drawer */}
@@ -114,10 +126,11 @@ export default function Navbar() {
               exit="hidden"
               variants={{
                 hidden: {},
-                show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+                show: {
+                  transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                },
               }}
-              className="flex flex-col items-center justify-center gap-10 pt-20"
-              style={{ fontFamily: "Bebas Neue, sans-serif" }}
+              className="flex flex-col items-center justify-center gap-10 pt-20 font-display"
             >
               {NAV_LINKS.map((link) => (
                 <motion.li

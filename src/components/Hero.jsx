@@ -23,72 +23,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black"
+      className="hero-bg relative flex min-h-screen w-full items-center justify-center overflow-hidden"
     >
-      {/* Base gradient wash */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0a0f1f_0%,_#000_70%)]" />
-
-      {/* Dot grid */}
-      <div className="linear-grid absolute inset-0" />
-
-      {/* Animated blue orbs */}
-      <motion.div
-        className="orb"
-        initial={{ x: -120, y: -60, opacity: 0.0 }}
-        animate={{
-          x: [-120, 40, -80, -120],
-          y: [-60, 30, 80, -60],
-          opacity: [0.35, 0.55, 0.4, 0.35],
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          left: "12%",
-          top: "20%",
-          width: 420,
-          height: 420,
-          background:
-            "radial-gradient(circle, rgba(59,107,255,0.55) 0%, rgba(59,107,255,0) 70%)",
-        }}
-      />
-      <motion.div
-        className="orb"
-        initial={{ x: 60, y: 80, opacity: 0.0 }}
-        animate={{
-          x: [60, -40, 120, 60],
-          y: [80, 0, 60, 80],
-          opacity: [0.25, 0.45, 0.3, 0.25],
-        }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          right: "8%",
-          bottom: "10%",
-          width: 520,
-          height: 520,
-          background:
-            "radial-gradient(circle, rgba(30,64,175,0.45) 0%, rgba(30,64,175,0) 70%)",
-        }}
-      />
-      <motion.div
-        className="orb"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: [0.2, 0.35, 0.2],
-          scale: [1, 1.12, 1],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          left: "50%",
-          top: "55%",
-          width: 680,
-          height: 380,
-          transform: "translate(-50%, -50%)",
-          background:
-            "radial-gradient(ellipse, rgba(96,132,255,0.28) 0%, rgba(96,132,255,0) 65%)",
-        }}
-      />
-
-      {/* Vignette pulling focus to copy */}
-      <div className="linear-vignette absolute inset-0" />
+      {/* Subtle dark veil so the copy stays readable over the image */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
       <motion.div
@@ -99,10 +37,9 @@ export default function Hero() {
       >
         <motion.h1
           variants={fadeUp}
-          className="text-white"
+          className="font-display text-white"
           style={{
-            fontFamily: "Bebas Neue, sans-serif",
-            letterSpacing: "0.04em",
+            letterSpacing: "-0.04em",
             lineHeight: 1.02,
           }}
         >
@@ -116,11 +53,13 @@ export default function Hero() {
 
         <motion.p
           variants={fadeUp}
-          className="mt-8 max-w-2xl text-lg md:text-xl text-white/70"
+          className="mt-8 max-w-3xl text-white/80"
           style={{
-            fontFamily: "Barlow Condensed, sans-serif",
-            fontWeight: 400,
-            letterSpacing: "0.01em",
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: 300,
+            fontSize: "25px",
+            letterSpacing: "-0.04em",
+            lineHeight: 1.4,
           }}
         >
           Combinamos design, automação e IA para transformar sua operação em
@@ -133,15 +72,15 @@ export default function Hero() {
         >
           <a
             href="#contatos"
-            className="btn-pill-primary inline-flex items-center justify-center rounded-full px-10 py-4 text-[15px] tracking-[0.22em] uppercase transition-transform duration-300 hover:-translate-y-0.5"
-            style={{ fontFamily: "Barlow Condensed, sans-serif", fontWeight: 600 }}
+            className="btn-pill-primary inline-flex items-center justify-center rounded-full px-10 py-4 text-[15px] tracking-[-0.02em] uppercase transition-transform duration-300 hover:-translate-y-0.5"
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 500 }}
           >
             Quero escalar com IA
           </a>
           <a
             href="#portfolio"
-            className="btn-pill-ghost inline-flex items-center justify-center rounded-full px-10 py-4 text-[15px] tracking-[0.22em] uppercase transition-transform duration-300 hover:-translate-y-0.5"
-            style={{ fontFamily: "Barlow Condensed, sans-serif", fontWeight: 500 }}
+            className="btn-pill-ghost inline-flex items-center justify-center rounded-full px-10 py-4 text-[15px] tracking-[-0.02em] uppercase transition-transform duration-300 hover:-translate-y-0.5"
+            style={{ fontFamily: "Poppins, sans-serif", fontWeight: 500 }}
           >
             Ver projetos
           </a>
@@ -157,7 +96,7 @@ export default function Hero() {
       >
         <span
           className="text-xs tracking-[0.3em] text-white/70"
-          style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontWeight: 300 }}
         >
           Scroll
         </span>
