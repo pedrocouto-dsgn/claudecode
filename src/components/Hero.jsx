@@ -43,10 +43,10 @@ export default function Hero() {
             lineHeight: 1.02,
           }}
         >
-          <span className="block text-[44px] sm:text-6xl md:text-7xl lg:text-[88px]">
+          <span className="block text-[28px] sm:text-[34px] md:text-[40px]">
             AUTOMATIZE COM INTELIGÊNCIA.
           </span>
-          <span className="block text-[44px] sm:text-6xl md:text-7xl lg:text-[88px]">
+          <span className="block text-[28px] sm:text-[34px] md:text-[40px]">
             CRESÇA COM EFICIÊNCIA.
           </span>
         </motion.h1>
