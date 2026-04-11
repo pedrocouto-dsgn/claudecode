@@ -110,9 +110,11 @@ body {
 
 /* ---------- Hero background helpers ------------------------------------- */
 
-/* The webp provided by the brand lives at /image.webp (public/image.webp) */
+/* Brand hero background. The file lives at
+ * public/Hero (5) (1).webp — spaces/parens are URL-encoded so the
+ * browser resolves it correctly. */
 .hero-bg {
-  background-image: url("/image.webp");
+  background-image: url("/Hero%20(5)%20(1).webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
