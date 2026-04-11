@@ -1,19 +1,13 @@
 @import "tailwindcss";
 
-/* ---------------------------------------------------------------------------
- * Rebelton is a commercial font and is not hosted on Google Fonts.
- * Drop the font file at `public/fonts/Rebelton.woff2` (and .woff for
- * broader support) and the declaration below will pick it up automatically.
- * While the file is not present, the stack falls back to Bebas Neue so
- * the layout stays visually close to the final design.
- * ------------------------------------------------------------------------- */
+/* Brand display font — Rebelton Extended, shipped locally under
+ * public/Fonts/rebelton-extended.ttf */
 @font-face {
   font-family: "Rebelton";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/Rebelton.woff2") format("woff2"),
-    url("/fonts/Rebelton.woff") format("woff");
+  src: url("/Fonts/rebelton-extended.ttf") format("truetype");
 }
 
 @theme {
