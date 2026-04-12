@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 
 const containerVariants = {
   hidden: {},
@@ -24,22 +23,26 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden bg-black"
     >
-      {/* Animated gradient background */}
-      <BackgroundGradientAnimation
-        gradientBackgroundStart="rgb(3, 7, 18)"
-        gradientBackgroundEnd="rgb(8, 12, 28)"
-        firstColor="15, 40, 110"
-        secondColor="20, 55, 130"
-        thirdColor="10, 30, 85"
-        fourthColor="5, 18, 55"
-        fifthColor="12, 45, 95"
-        pointerColor="30, 75, 140"
-        size="80%"
-        blendingValue="hard-light"
-        interactive={true}
-        containerClassName="absolute inset-0"
+      {/* Single large blob with blur */}
+      <motion.div
+        animate={{
+          x: [-30, 40, -20, -30],
+          y: [20, -30, 40, 20],
+          scale: [1, 1.08, 0.95, 1],
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2"
+        style={{
+          width: 800,
+          height: 500,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #627695 0%, rgba(98,118,149,0) 70%)",
+          filter: "blur(120px)",
+          opacity: 0.55,
+          pointerEvents: "none",
+        }}
       />
 
       {/* Dot grid overlay */}
