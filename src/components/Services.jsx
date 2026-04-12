@@ -353,7 +353,7 @@ export default function Services() {
             className="md:col-span-3"
             glowDelay="-6s"
             mockup={<ConsultoriaMockup />}
-            title={<>Consultoria Estratégica<br />de IA</>}
+            title={<>Consultoria<br />Estratégica de IA</>}
             description="Obtenha orientação especializada para implementar soluções de IA que impulsionem o crescimento dos negócios."
           />
         </div>
