@@ -18,21 +18,21 @@ function ProjectCard({ label, index }) {
     offset: ["start end", "start start"],
   });
 
-  // Scale: starts at 0.82, grows to 1 as the card reaches the top
-  const scale = useTransform(scrollYProgress, [0, 1], [0.82, 1]);
+  // Scale: starts at 20%, grows to 100% as the card reaches the top
+  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
   // Rounded corners shrink as the card scales up
-  const borderRadius = useTransform(scrollYProgress, [0, 1], [24, 0]);
-  // Slight fade-in at the very beginning
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], [32, 0]);
+  // Fade-in during the first half of travel
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{ scale, borderRadius, opacity }}
-      className="sticky top-0 w-full overflow-hidden"
+      className="sticky top-0 h-screen w-full overflow-hidden"
     >
       <div
-        className="relative flex aspect-[16/9] w-full items-center justify-center"
+        className="relative flex h-full w-full items-center justify-center"
         style={{ backgroundColor: "#d4d4d4" }}
       >
         <span
@@ -84,14 +84,11 @@ export default function Portfolio() {
           ~82% to 100% width. */}
       <div className="mt-12 md:mt-16">
         {PROJECTS.map((project, i) => (
-          <div key={project.id} className="px-4 md:px-8 lg:px-12 pb-4 md:pb-6">
+          <div key={project.id}>
             <ProjectCard label={project.label} index={i} />
           </div>
         ))}
       </div>
-
-      {/* Bottom spacer */}
-      <div className="h-16 md:h-24" />
     </section>
   );
 }
