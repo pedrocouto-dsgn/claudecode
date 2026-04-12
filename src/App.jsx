@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Quote from "./components/Quote";
 import Services from "./components/Services";
 import Process from "./components/Process";
+import Portfolio from "./components/Portfolio";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Quote />
         <Services />
         <Process />
+        <Portfolio />
       </main>
     </div>
   );
