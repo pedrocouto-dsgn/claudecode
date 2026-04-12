@@ -75,7 +75,8 @@ export default function Portfolio() {
             fontSize: "clamp(40px, 6vw, 76px)",
           }}
         >
-          Projetos Recentes
+          <span className="block">Projetos</span>
+          <span className="block">Recentes</span>
         </motion.h2>
       </div>
 
