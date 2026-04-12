@@ -251,14 +251,15 @@ function ConsultoriaMockup() {
 /*  Card shell                                                              */
 /* ----------------------------------------------------------------------- */
 
-function ServiceCard({ mockup, title, description, className = "" }) {
+function ServiceCard({ mockup, title, description, className = "", glowDelay = "0s" }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={`rounded-2xl border border-white/10 bg-white/[0.015] p-6 md:p-8 ${className}`}
+      className={`card-glow rounded-2xl border border-white/10 bg-white/[0.015] p-6 md:p-8 ${className}`}
+      style={{ "--glow-delay": glowDelay }}
     >
       <div className="mb-6">{mockup}</div>
       <h3
@@ -322,30 +323,35 @@ export default function Services() {
         <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-6">
           <ServiceCard
             className="md:col-span-2"
+            glowDelay="0s"
             mockup={<AgentesMockup />}
             title="Agentes IA"
             description="Criamos agentes inteligentes com IA que automatizam leads e vendas, fazendo parte da tua equipa 24/7."
           />
           <ServiceCard
             className="md:col-span-2"
+            glowDelay="-3s"
             mockup={<AutomacoesMockup />}
             title="Automações"
             description="Implementação de automações de processos empresariais múltiplas etapas entre ferramentas e plataformas."
           />
           <ServiceCard
             className="md:col-span-2"
+            glowDelay="-5s"
             mockup={<WebsitesMockup />}
             title="Websites"
             description="Sites e aplicações web modernas, responsivas e otimizadas para performance e SEO."
           />
           <ServiceCard
             className="md:col-span-3"
+            glowDelay="-1.5s"
             mockup={<SolucoesMockup />}
             title="Soluções de IA Personalizadas"
             description="Construímos sistemas de IA sob medida que estejam alinhados com os objetivos e desafios do seu negócio."
           />
           <ServiceCard
             className="md:col-span-3"
+            glowDelay="-6s"
             mockup={<ConsultoriaMockup />}
             title="Consultoria Estratégica de IA"
             description="Obtenha orientação especializada para implementar soluções de IA que impulsionem o crescimento dos negócios."
