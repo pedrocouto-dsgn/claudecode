@@ -25,7 +25,7 @@ export default function Footer() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url("/footer(1).webp")',
+          backgroundImage: 'url("/footer%20(1).webp")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
