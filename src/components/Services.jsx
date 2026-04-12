@@ -287,7 +287,12 @@ export default function Services() {
     <section
       id="servicos"
       className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "#07080A" }}
+      style={{
+        backgroundImage: 'url("/3%20se%C3%A7%C3%A3o.png")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         {/* Header row — title on the left, intro paragraph on the right */}
