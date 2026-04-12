@@ -28,11 +28,16 @@ export default function Hero() {
       {/* Single large blob with blur */}
       <motion.div
         animate={{
-          x: [-30, 40, -20, -30],
-          y: [20, -30, 40, 20],
-          scale: [1, 1.08, 0.95, 1],
+          x: [-200, 300, -150, 250, -100, 350, -200],
+          y: [50, -120, 80, -80, 150, -50, 50],
+          scale: [1, 1.1, 0.95, 1.05, 0.9, 1.12, 1],
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        transition={{
+          duration: 45,
+          repeat: Infinity,
+          ease: "easeInOut",
+          times: [0, 0.18, 0.33, 0.48, 0.65, 0.82, 1],
+        }}
         className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2"
         style={{
           width: 800,
@@ -40,7 +45,7 @@ export default function Hero() {
           borderRadius: "50%",
           background: "radial-gradient(circle, #627695 0%, rgba(98,118,149,0) 70%)",
           filter: "blur(120px)",
-          opacity: 0.55,
+          opacity: 0.65,
           pointerEvents: "none",
         }}
       />
