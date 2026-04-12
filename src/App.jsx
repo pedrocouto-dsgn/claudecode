@@ -4,6 +4,7 @@ import Quote from "./components/Quote";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Services />
         <Process />
         <Portfolio />
+        <Contact />
       </main>
     </div>
   );
