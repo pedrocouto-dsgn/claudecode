@@ -1,4 +1,10 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import {
+  motion,
+  animate,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -19,39 +25,90 @@ const fadeUp = {
   },
 };
 
+// Shared animation config for the blob + the pattern-reveal mask so they
+// travel in perfect lock-step.
+const BLOB_X = [-200, 300, -150, 250, -100, 350, -200];
+const BLOB_Y = [50, -120, 80, -80, 150, -50, 50];
+const BLOB_SCALE = [1, 1.1, 0.95, 1.05, 0.9, 1.12, 1];
+const BLOB_TRANSITION = {
+  duration: 45,
+  repeat: Infinity,
+  ease: "easeInOut",
+  times: [0, 0.18, 0.33, 0.48, 0.65, 0.82, 1],
+};
+
 export default function Hero() {
+  // Motion values drive both the visible blob and the radial mask that
+  // reveals the pattern underneath. Using shared values keeps them glued.
+  const blobX = useMotionValue(BLOB_X[0]);
+  const blobY = useMotionValue(BLOB_Y[0]);
+  const blobScale = useMotionValue(BLOB_SCALE[0]);
+
+  useEffect(() => {
+    const cX = animate(blobX, BLOB_X, BLOB_TRANSITION);
+    const cY = animate(blobY, BLOB_Y, BLOB_TRANSITION);
+    const cS = animate(blobScale, BLOB_SCALE, BLOB_TRANSITION);
+    return () => {
+      cX.stop();
+      cY.stop();
+      cS.stop();
+    };
+  }, [blobX, blobY, blobScale]);
+
+  // Radial mask that tracks the blob's centre. The pattern layer is only
+  // visible where this mask is opaque → the blob becomes a spotlight that
+  // reveals the pattern as it passes over it.
+  const maskImage = useTransform(
+    [blobX, blobY, blobScale],
+    ([x, y, s]) => {
+      const rx = 420 * s;
+      const ry = 260 * s;
+      return `radial-gradient(ellipse ${rx}px ${ry}px at calc(50% + ${x}px) calc(55% + ${y}px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0) 85%)`;
+    }
+  );
+
   return (
     <section
       id="top"
       className="relative min-h-screen w-full overflow-hidden bg-black"
     >
-      {/* Single large blob with blur */}
+      {/* Pattern layer — sits between the black bg and the blob, only
+          visible where the blob passes over it thanks to the radial mask. */}
       <motion.div
-        animate={{
-          x: [-200, 300, -150, 250, -100, 350, -200],
-          y: [50, -120, 80, -80, 150, -50, 50],
-          scale: [1, 1.1, 0.95, 1.05, 0.9, 1.12, 1],
-        }}
-        transition={{
-          duration: 45,
-          repeat: Infinity,
-          ease: "easeInOut",
-          times: [0, 0.18, 0.33, 0.48, 0.65, 0.82, 1],
-        }}
-        className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2"
+        aria-hidden
+        className="absolute inset-0 z-0"
         style={{
-          width: 800,
-          height: 500,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, #627695 0%, rgba(98,118,149,0) 70%)",
-          filter: "blur(120px)",
-          opacity: 0.65,
+          backgroundImage: "url('/pattern.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.6,
+          WebkitMaskImage: maskImage,
+          maskImage: maskImage,
           pointerEvents: "none",
         }}
       />
 
+      {/* Single large blob with blur */}
+      <motion.div
+        style={{
+          x: blobX,
+          y: blobY,
+          scale: blobScale,
+          width: 800,
+          height: 500,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, #627695 0%, rgba(98,118,149,0) 70%)",
+          filter: "blur(120px)",
+          opacity: 0.65,
+          pointerEvents: "none",
+        }}
+        className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 z-[1]"
+      />
+
       {/* Dot grid overlay */}
-      <div className="linear-grid absolute inset-0 z-[1]" />
+      <div className="linear-grid absolute inset-0 z-[2]" />
 
       {/* Content */}
       <motion.div
