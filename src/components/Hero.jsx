@@ -1,10 +1,4 @@
-import { useEffect } from "react";
-import {
-  motion,
-  animate,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -25,8 +19,8 @@ const fadeUp = {
   },
 };
 
-// Shared animation config for the blob + the pattern-reveal mask so they
-// travel in perfect lock-step.
+// The blob and the pattern-reveal mask share identical keyframes + timing
+// so they travel in perfect lock-step.
 const BLOB_X = [-200, 300, -150, 250, -100, 350, -200];
 const BLOB_Y = [50, -120, 80, -80, 150, -50, 50];
 const BLOB_SCALE = [1, 1.1, 0.95, 1.05, 0.9, 1.12, 1];
@@ -38,63 +32,43 @@ const BLOB_TRANSITION = {
 };
 
 export default function Hero() {
-  // Motion values drive both the visible blob and the radial mask that
-  // reveals the pattern underneath. Using shared values keeps them glued.
-  const blobX = useMotionValue(BLOB_X[0]);
-  const blobY = useMotionValue(BLOB_Y[0]);
-  const blobScale = useMotionValue(BLOB_SCALE[0]);
-
-  useEffect(() => {
-    const cX = animate(blobX, BLOB_X, BLOB_TRANSITION);
-    const cY = animate(blobY, BLOB_Y, BLOB_TRANSITION);
-    const cS = animate(blobScale, BLOB_SCALE, BLOB_TRANSITION);
-    return () => {
-      cX.stop();
-      cY.stop();
-      cS.stop();
-    };
-  }, [blobX, blobY, blobScale]);
-
-  // Radial mask that tracks the blob's centre. The pattern layer is only
-  // visible where this mask is opaque → the blob becomes a spotlight that
-  // reveals the pattern as it passes over it.
-  const maskImage = useTransform(
-    [blobX, blobY, blobScale],
-    ([x, y, s]) => {
-      const rx = 420 * s;
-      const ry = 260 * s;
-      return `radial-gradient(ellipse ${rx}px ${ry}px at calc(50% + ${x}px) calc(55% + ${y}px), rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0) 85%)`;
-    }
-  );
-
   return (
     <section
       id="top"
       className="relative min-h-screen w-full overflow-hidden bg-black"
     >
-      {/* Pattern layer — sits between the black bg and the blob, only
-          visible where the blob passes over it thanks to the radial mask. */}
+      {/* Pattern layer — between the black bg and the blob. The radial
+          mask is driven by CSS custom properties (--mx, --my, --ms) that
+          framer-motion animates, so the pattern only appears where the
+          blob currently sits. */}
       <motion.div
         aria-hidden
-        className="absolute inset-0 z-0"
+        className="hero-pattern absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/pattern.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.6,
-          WebkitMaskImage: maskImage,
-          maskImage: maskImage,
+          "--mx": "-200px",
+          "--my": "50px",
+          "--ms": 1,
+          opacity: 0.9,
           pointerEvents: "none",
         }}
+        animate={{
+          "--mx": BLOB_X.map((v) => `${v}px`),
+          "--my": BLOB_Y.map((v) => `${v}px`),
+          "--ms": BLOB_SCALE,
+        }}
+        transition={BLOB_TRANSITION}
       />
 
       {/* Single large blob with blur */}
       <motion.div
+        animate={{
+          x: BLOB_X,
+          y: BLOB_Y,
+          scale: BLOB_SCALE,
+        }}
+        transition={BLOB_TRANSITION}
+        className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 z-[1]"
         style={{
-          x: blobX,
-          y: blobY,
-          scale: blobScale,
           width: 800,
           height: 500,
           borderRadius: "50%",
@@ -104,7 +78,6 @@ export default function Hero() {
           opacity: 0.65,
           pointerEvents: "none",
         }}
-        className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 z-[1]"
       />
 
       {/* Dot grid overlay */}

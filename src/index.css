@@ -232,6 +232,50 @@ body {
   background-repeat: no-repeat;
 }
 
+/* ---------- Hero pattern reveal ----------------------------------------
+ * pattern.png is rendered as a full-screen layer and masked by a radial
+ * gradient whose centre (--mx, --my) and radius scale (--ms) follow the
+ * animated blob. Registering the variables with @property lets CSS
+ * interpolate between keyframes smoothly. */
+@property --mx {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
+}
+@property --my {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
+}
+@property --ms {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+.hero-pattern {
+  background-image: url("/pattern.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: radial-gradient(
+    ellipse calc(420px * var(--ms)) calc(260px * var(--ms))
+      at calc(50% + var(--mx)) calc(55% + var(--my)),
+    #000 0%,
+    #000 35%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  mask-image: radial-gradient(
+    ellipse calc(420px * var(--ms)) calc(260px * var(--ms))
+      at calc(50% + var(--mx)) calc(55% + var(--my)),
+    #000 0%,
+    #000 35%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
 /* Scroll indicator line */
 @keyframes scrollLine {
   0% {
