@@ -144,12 +144,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* ---------- Animated border glow ---------------------------------------
- * A single bright point travels slowly around the card border. The
- * technique is a conic-gradient whose `from` angle is animated via a
- * CSS custom property declared with @property, masked so only the
- * outermost 1px of the rounded rectangle is visible.
- * ----------------------------------------------------------------------- */
+/* ---------- Animated border glow --------------------------------------- */
 @property --card-glow-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -166,7 +161,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1px; /* border thickness for the travelling light */
+  padding: 1px;
   background: conic-gradient(
     from var(--card-glow-angle),
     #70befa 0deg,
@@ -186,8 +181,6 @@ body {
   z-index: 1;
 }
 
-/* Soft outer bloom — same mask trick but with wider padding so the
- * blurred light only hugs the border, never fills the card interior. */
 .card-glow::after {
   content: "";
   position: absolute;
@@ -221,10 +214,6 @@ body {
 }
 
 /* ---------- Hero background helpers ------------------------------------- */
-
-/* Brand hero background. The file lives at
- * public/Hero (5) (1).webp — spaces/parens are URL-encoded so the
- * browser resolves it correctly. */
 .hero-bg {
   background-image: url("/Hero%20(5)%20(1).webp");
   background-size: cover;
@@ -232,11 +221,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* ---------- Hero pattern reveal ----------------------------------------
- * pattern.png is rendered as a full-screen layer and masked by a radial
- * gradient whose centre (--mx, --my) and radius scale (--ms) follow the
- * animated blob. Registering the variables with @property lets CSS
- * interpolate between keyframes smoothly. */
+/* ---------- Hero pattern reveal ---------------------------------------- */
 @property --mx {
   syntax: "<length>";
   initial-value: 0px;
